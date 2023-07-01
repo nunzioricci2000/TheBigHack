@@ -19,7 +19,6 @@ struct DiscoveryView: View {
         NavigationStack {
             List(viewModel.nodes) { device in
                 Button(device.name ?? "unknown") {
-                    print(device.name ?? "nil")
                 }
             }.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -27,11 +26,5 @@ struct DiscoveryView: View {
                 }
             }
         }
-    }
-}
-
-struct DiscoveryView_Previews: PreviewProvider {
-    static var previews: some View {
-        DiscoveryView(DiscoveryViewModel())
     }
 }

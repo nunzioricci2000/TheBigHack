@@ -10,14 +10,12 @@ import SwiftUI
 import STBlueSDK
 
 struct ContentView: View {
+    @StateObject var appModel: AppModel = .init()
     
     var body: some View {
-        DiscoveryView(DiscoveryViewModel())
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        DiscoveryView(DiscoveryViewModel(appModel))
+            .sheet(item: $appModel.discovery) { viewModel in
+                DiscoveryView(viewModel)
+            }
     }
 }

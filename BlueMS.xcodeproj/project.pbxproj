@@ -39,6 +39,10 @@
 		C50930D034FEF9E059B021E5 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E2BBC4001224B2E404697989 /* art.scnassets */; };
 		C575A235E96869DC4CD37EDD /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927B5BBF4B92A49098A66FB7 /* EmptyViewController.swift */; };
 		CC3F598CB002C0296BC92143 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0806C7ECA51B4510D9BD44 /* Localizer.swift */; };
+		CD7DA6492A508FB2004411A4 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DA6482A508FB2004411A4 /* AppModel.swift */; };
+		CD7DA64B2A5090E4004411A4 /* NodeNeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DA64A2A5090E4004411A4 /* NodeNeeder.swift */; };
+		CD7DA64E2A50971A004411A4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DA64D2A50971A004411A4 /* MainView.swift */; };
+		CD7DA6502A509735004411A4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DA64F2A509735004411A4 /* MainViewModel.swift */; };
 		CDCD3D3A2A50522000743563 /* GizmoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD3D392A50522000743563 /* GizmoApp.swift */; };
 		CDCD3D3C2A50522000743563 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD3D3B2A50522000743563 /* ContentView.swift */; };
 		CDCD3D3E2A50522100743563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCD3D3D2A50522100743563 /* Assets.xcassets */; };
@@ -95,6 +99,10 @@
 		BDEA6DFE2D391D53F4924A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1F0C2EB8BC6631B004B7785 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		C3735EBE8EB4551BDA4728E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CD7DA6482A508FB2004411A4 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppModel.swift; path = Discovery/AppModel.swift; sourceTree = "<group>"; };
+		CD7DA64A2A5090E4004411A4 /* NodeNeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeNeeder.swift; sourceTree = "<group>"; };
+		CD7DA64D2A50971A004411A4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CD7DA64F2A509735004411A4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CDCD3D372A50522000743563 /* Gizmo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gizmo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCD3D392A50522000743563 /* GizmoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GizmoApp.swift; sourceTree = "<group>"; };
 		CDCD3D3B2A50522000743563 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -266,13 +274,24 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		CD7DA64C2A5096F0004411A4 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				CD7DA64D2A50971A004411A4 /* MainView.swift */,
+				CD7DA64F2A509735004411A4 /* MainViewModel.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		CDCD3D382A50522000743563 /* Gizmo */ = {
 			isa = PBXGroup;
 			children = (
+				CD7DA64C2A5096F0004411A4 /* MainView */,
 				CDCD3D5F2A50883D00743563 /* Discovery */,
 				CDCD3D5A2A50810000743563 /* Helpers */,
 				CDCD3D392A50522000743563 /* GizmoApp.swift */,
 				CDCD3D3B2A50522000743563 /* ContentView.swift */,
+				CD7DA6482A508FB2004411A4 /* AppModel.swift */,
 				CDCD3D3D2A50522100743563 /* Assets.xcassets */,
 				CDCD3D3F2A50522100743563 /* Preview Content */,
 			);
@@ -308,6 +327,7 @@
 			children = (
 				CDCD3D582A506EBE00743563 /* DiscoveryViewModel.swift */,
 				CDCD3D562A506EA100743563 /* DiscoveryView.swift */,
+				CD7DA64A2A5090E4004411A4 /* NodeNeeder.swift */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -537,9 +557,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD7DA6492A508FB2004411A4 /* AppModel.swift in Sources */,
+				CD7DA64E2A50971A004411A4 /* MainView.swift in Sources */,
 				CDCD3D5C2A50812500743563 /* Node+Identifiable.swift in Sources */,
 				CDCD3D3C2A50522000743563 /* ContentView.swift in Sources */,
 				CDCD3D5E2A5081C800743563 /* [Equatable]+remove.swift in Sources */,
+				CD7DA6502A509735004411A4 /* MainViewModel.swift in Sources */,
+				CD7DA64B2A5090E4004411A4 /* NodeNeeder.swift in Sources */,
 				CDCD3D572A506EA100743563 /* DiscoveryView.swift in Sources */,
 				CDCD3D3A2A50522000743563 /* GizmoApp.swift in Sources */,
 				CDCD3D592A506EBE00743563 /* DiscoveryViewModel.swift in Sources */,

@@ -9,17 +9,27 @@
 import SwiftUI
 import STBlueSDK
 
-class DiscoveryViewModel: ObservableObject {
+class DiscoveryViewModel: ObservableObject, Identifiable {
     // MARK: View values
     @Published var isDiscovering: Bool = false
     @Published var nodes: [Node] = []
+    
+    let id = UUID()
     
     // MARK: View actions
     func refresh() {
         nodes = BlueManager.shared.discoveredNodes
     }
     
-    init() {
+    func selectNode() {
+        
+    }
+    
+    // MARK: Dependencies
+    let nodeNeeder: NodeNeeder
+    
+    init(_ nodeNeeder: NodeNeeder) {
+        self.nodeNeeder = nodeNeeder
         BlueManager.shared.addDelegate(self)
         BlueManager.shared.discoveryStart()
     }
