@@ -9,13 +9,51 @@
 import SwiftUI
 
 struct MainView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    @StateObject var viewModel: MainViewModel
+    
+    init(_ viewModel: MainViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
     }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
+    
+    var body: some View {
+        VStack {
+            Text("Ease")
+                .fontWeight(.black)
+                .font(.largeTitle)
+            Grid(horizontalSpacing: 20, verticalSpacing: 20) {
+                GridRow {
+                    DataCard(
+                        name: "Temperatura",
+                        systemImage: "thermometer.medium",
+                        unit: "°C",
+                        value: viewModel.temperature,
+                        image: "Temperature"
+                    )
+                    DataCard(
+                        name: "Rumore",
+                        systemImage: "waveform.path",
+                        unit: "dB",
+                        value: viewModel.acusticPollution,
+                        image: "Noise"
+                    )
+                }
+                GridRow {
+                    DataCard(
+                        name: "Temperatura",
+                        systemImage: "thermometer.medium",
+                        unit: "°C",
+                        value: viewModel.temperature,
+                        image: "Temperature"
+                    )
+                    DataCard(
+                        name: "Rumore",
+                        systemImage: "waveform.path",
+                        unit: "dB",
+                        value: viewModel.acusticPollution,
+                        image: "Noise"
+                    )
+                }
+            }
+        }.padding(46)
     }
 }

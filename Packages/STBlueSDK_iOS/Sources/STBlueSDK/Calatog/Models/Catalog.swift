@@ -18,6 +18,15 @@ public struct Catalog {
     public let checksum: String?
     public let date: String?
     public let version: String?
+    
+    public init(blueStSdkV2: [Firmware], blueStSdkV1: [Firmware]?, characteristics: [BleCharacteristic]?, checksum: String?, date: String?, version: String?) {
+        self.blueStSdkV2 = blueStSdkV2
+        self.blueStSdkV1 = blueStSdkV1
+        self.characteristics = characteristics
+        self.checksum = checksum
+        self.date = date
+        self.version = version
+    }
 }
 
 extension Catalog: Codable {

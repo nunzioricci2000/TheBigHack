@@ -10,16 +10,23 @@ import SwiftUI
 import STBlueSDK
 
 class AppModel: ObservableObject {
-    // MARK: App values
-    @Published var node: Node?
-    
-    // MARK: Navigation
+    // MARK: ViewModels
+    @Published var main: MainViewModel = .init()
     @Published var discovery: DiscoveryViewModel?
+    
+    // MARK: App Actions
+    func onAppear() {
+        discovery = .init(self)
+    }
+    
+    init() {
+        
+    }
 }
 
 extension AppModel: NodeNeeder {
     func setNode(_ node: Node) {
-        self.node = node
+        self.main.updateNode(node)
         self.discovery = nil
     }
 }

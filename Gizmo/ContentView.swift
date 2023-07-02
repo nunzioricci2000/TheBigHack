@@ -13,9 +13,13 @@ struct ContentView: View {
     @StateObject var appModel: AppModel = .init()
     
     var body: some View {
-        DiscoveryView(DiscoveryViewModel(appModel))
-            .sheet(item: $appModel.discovery) { viewModel in
+        MainView(appModel.main)
+            .sheet(item: $appModel.discovery, onDismiss: {
+                if appModel.main.node == nil {
+                    appModel.discovery = DiscoveryViewModel(appModel)
+                }
+            }) { viewModel in
                 DiscoveryView(viewModel)
-            }
+            }.onAppear(perform: appModel.onAppear)
     }
 }

@@ -21,8 +21,9 @@ class DiscoveryViewModel: ObservableObject, Identifiable {
         nodes = BlueManager.shared.discoveredNodes
     }
     
-    func selectNode() {
-        
+    func selectNode(_ node: Node) {
+        BlueManager.shared.connect(node)
+        nodeNeeder.setNode(node)
     }
     
     // MARK: Dependencies
@@ -35,8 +36,8 @@ class DiscoveryViewModel: ObservableObject, Identifiable {
     }
     
     deinit {
-        BlueManager.shared.discoveryStop()
         BlueManager.shared.removeDelegate(self)
+        BlueManager.shared.discoveryStop()
     }
 }
 

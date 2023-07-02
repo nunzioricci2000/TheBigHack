@@ -13,9 +13,9 @@ import Foundation
 import CoreBluetooth
 
 public class BlueCharacteristic {
-    let characteristic: CBCharacteristic
+    public let characteristic: CBCharacteristic
     let maxMtu: Int
-    let features: [Feature]
+    public let features: [Feature]
 
     init(characteristic: CBCharacteristic, features: [Feature], maxMtu: Int) {
         self.characteristic = characteristic

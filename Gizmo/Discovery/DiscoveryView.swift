@@ -17,9 +17,8 @@ struct DiscoveryView: View {
     
     var body: some View {
         NavigationStack {
-            List(viewModel.nodes) { device in
-                Button(device.name ?? "unknown") {
-                }
+            List(viewModel.nodes) { node in
+                Button(node.name ?? "unknown", action: { viewModel.selectNode(node) })
             }.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Refresh", action: viewModel.refresh)
