@@ -23,11 +23,11 @@ struct MainView: View {
             Grid(horizontalSpacing: 20, verticalSpacing: 20) {
                 GridRow {
                     DataCard(
-                        name: "Temperatura",
-                        systemImage: "thermometer.medium",
-                        unit: "°C",
-                        value: viewModel.temperature,
-                        image: "Temperature"
+                        name: "Luminosità",
+                        systemImage: "sun.max",
+                        unit: "lx",
+                        value: viewModel.luminosity,
+                        image: "Luminosity"
                     )
                     DataCard(
                         name: "Rumore",
@@ -39,18 +39,18 @@ struct MainView: View {
                 }
                 GridRow {
                     DataCard(
+                        name: "Umidità",
+                        systemImage: "humidity",
+                        unit: "dB",
+                        value: viewModel.humidity,
+                        image: "Humidity"
+                    )
+                    DataCard(
                         name: "Temperatura",
                         systemImage: "thermometer.medium",
                         unit: "°C",
                         value: viewModel.temperature,
                         image: "Temperature"
-                    )
-                    DataCard(
-                        name: "Rumore",
-                        systemImage: "waveform.path",
-                        unit: "dB",
-                        value: viewModel.acusticPollution,
-                        image: "Noise"
                     )
                 }
             }
