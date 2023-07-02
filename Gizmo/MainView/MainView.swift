@@ -41,7 +41,7 @@ struct MainView: View {
                     DataCard(
                         name: "Umidità",
                         systemImage: "humidity",
-                        unit: "dB",
+                        unit: "%",
                         value: viewModel.humidity,
                         image: "Humidity"
                     )
